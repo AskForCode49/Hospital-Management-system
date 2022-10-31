@@ -9,6 +9,46 @@ import DisplayRecord from './displayRecord';
 	   
         txtContactNoKeyTyped(){
             
+		initComponents(){ 
+            
+           return ( 
+                     <div> 
+                         <div className="container-fluid"><form> 
+                             <div className="row"> 
+                                 <div className="col-md-12"> 
+                                     <div className="card"> 
+                                         <h3 className="card-header text-center">Doctor Profile</h3> 
+                                         <div className="card-block"> 
+                                             <div className="card-block"> 
+                                                <span className="border text-muted"> 
+                                    <div className="row"><hr/></div> 
+                                      <div className="row"> 
+                                         <div className="col-md-8 eightDiv border rounded-left divborder"> 
+                                           <table className="table table-responsive tableUser"> 
+                                             <thead></thead> 
+                                             <tbody> 
+                                               <tr><td><span className="text-muted">Id</span></td><td><input type="text" ref="id" className="form-control" aria-describedby="basic-addon1"/></td></tr> 
+                                               <tr><td><span className="text-muted">Name</span></td><td><input type="text" ref="name" className="form-control" aria-describedby="basic-addon1"/></td></tr> 
+                                               <tr><td><span className="text-muted">Father's name</span></td><td><input type="text" ref="fatherName" className="form-control" aria-describedby="basic-addon1"/></td></tr> 
+                                               <tr><td><span className="text-muted">Address</span></td><td><input type="text" ref="address" className="form-control" aria-describedby="basic-addon1"/></td></tr> 
+                                               <tr><td><span className="text-muted">Contact No.</span></td><td><input type="number" ref="contactNo" className="form-control" aria-describedby="basic-addon1" onBlur={(this.txtContactNoKeyTyped.bind(this))} placeholder="enter 10 digit number"/></td></tr> 
+                                               <tr><td><span className="text-muted">Email Id</span></td><td><input type="email" ref="email" className="form-control" aria-describedby="basic-addon1"  /></td></tr> 
+                                               <tr><td><span className="text-muted">Qualification</span></td><td><input type="text" ref="qualification" className="form-control" aria-describedby="basic-addon1"/></td></tr> 
+                                               <tr><td><span className="text-muted">Specialization</span></td><td><input type="text" ref="specialization" className="form-control" aria-describedby="basic-addon1"/></td></tr> 
+                                               <tr><td><span className="text-muted">Gender</span></td> 
+                                                   <td> 
+                                                       <select className="custom-select" ref="gender"> 
+                                                            <option value="">select value</option> 
+                                                            <option value="F">F</option> 
+                                                            <option value="M">M</option> 
+                                                        </select> 
+                                                   </td> 
+                                               </tr> 
+                                               <tr><td><span className="text-muted">Blood Group</span></td> 
+                                                   <td> 
+                                                       <select className="custom-select" ref="bloodGroup"> 
+                                                            <option value="">select value</option> 
+                                                            <option value="O+">O+</option>
              let contactNo=this.refs.contactNo.value;
              
             console.log(this.refs.contactNo);
