@@ -84,3 +84,41 @@ export function loadAlert(message) {
         });
     return "DISPLAY_ALERT_STATUS";
 }
+export function deleteUserDataAction(username){ 
+    return function(dispatch) { 
+        axios({ 
+            url:'http://localhost:6060/user/'+username, 
+            method:"DELETE", 
+            responseType:"json" 
+        }).then(response => { 
+            dispatch({ 
+                type: "DELETE_USER_DATA", 
+                payload: response.data.message, 
+            }); 
+            dispatch({type:loadAlert(response.data.message)}); 
+        }) 
+            .catch((error) => { 
+                console.log(error); 
+            }) 
+    } 
+} 
+ 
+export function updateUserDataAction(user){ 
+    return function(dispatch) { 
+        axios({ 
+            url:'http://localhost:6060/user/', 
+            data:user, 
+            method:"PUT", 
+            responseType:"json" 
+        }).then(response => { 
+            dispatch({ 
+                type: "UPDATE_USER_DATA", 
+                payload: response.data.message, 
+            }); 
+            dispatch({type:loadAlert(response.data.message)}); 
+        }) 
+            .catch((error) => { 
+                console.log(error); 
+            }) 
+    } 
+}
